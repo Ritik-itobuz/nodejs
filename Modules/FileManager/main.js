@@ -45,7 +45,6 @@ else {
         process.exit()
     }
     else{
-        console.log('Invalid argument/Syntax');
     }
     
     if (args[2]=='readFile'){
