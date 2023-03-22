@@ -1,4 +1,4 @@
-const fs= require('fs')
+const fs = require('fs')
 const process = require("process")
 const path = require("path");
 
@@ -25,29 +25,29 @@ if (process.argv[2] === undefined) {
     display()
    }
 else { 
-    if (args[2]==='1'){
+    if (args[2] === '1'){
         console.log('node main.js readFile "Filename" ')}
-    if (args[2]==='2'){
+    if (args[2] === '2'){
         console.log('node main.js createFile "Foldername" "Filename" "text that the file will contain" ')}
-    if (args[2]==='3'){
+    if (args[2] === '3'){
         console.log('node main.js updateFile "Foldername" "Filename" "text that will be updated in the file"')}
-    if (args[2]==='4'){
+    if (args[2] === '4'){
         console.log('node main.js deleteFile "Foldername" "Filename" ')}
-    if (args[2]==='5'){
+    if (args[2] === '5'){
         console.log('node main.js makeDir "Foldername" "path/"')}
-    if (args[2]==='6'){
+    if (args[2] === '6'){
         console.log('node main.js delDir "Foldername" "path/"')}
-    if (args[2]==='7'){
+    if (args[2] === '7'){
         console.log('node main.js readDir "Foldername" "path/"')}
-    if (args[2]==='8'){
+    if (args[2] === '8'){
         console.log('node main.js renameDir "Old Foldername" "New Foldername" "path/"')}
-    if (args[2]==='9'){
+    if (args[2] === '9'){
         process.exit()
     }
     else{
     }
     
-    if (args[2]=='readFile'){
+    if (args[2] === 'readFile'){
         try {
             const data = fs.readFileSync(args[3], 'utf8');
             console.log(data);
@@ -57,40 +57,40 @@ else {
           display()
     }
 
-    if (args[2]=='createFile'){
+    if (args[2] === 'createFile'){
         var str=""
         for (let index = 5; index < args.length; index++) {
             str=str+" " +args[index];
         }
-        fs.writeFileSync(pathName+args[3]+'/'+args[4], str, 
+        fs.writeFileSync(pathName+args[3] + '/' + args[4], str, 
         console.log('File is created successfully!')
         )
         display();
     }
 
-    if (args[2]=='deleteFile'){
-        fs.unlinkSync(pathName+args[3]+'/'+args[4]);
+    if (args[2] === 'deleteFile'){
+        fs.unlinkSync(pathName + args[3] + '/' + args[4]);
         console.log('File deleted successfully!')
         display()
     }
-    if (args[2]=='updateFile'){
+    if (args[2] === 'updateFile'){
         var str=""
         for (let index = 5; index < args.length; index++) {
-            str=str+" " +args[index];
+            str = str + " " + args[index];
         }
-        fs.writeFileSync(pathName+args[3]+'/'+args[4], str, 
+        fs.writeFileSync(pathName + args[3] + '/' + args[4], str, 
         console.log('File is updated successfully!')
         );
         display()
     }
-    if(args[2]=='makeDir'){
+    if(args[2] === 'makeDir'){
         if (!fs.existsSync(pathName + args[4] + args[3])) {
             fs.mkdirSync(pathName + args[4] + args[3]);
         }
             console.log('Directory is created successfully!')
             display()
     } 
-    if(args[2]=='delDir'){
+    if(args[2] === 'delDir'){
         fs.rmdir(pathName + args[4] + args[3], err => {
             if (err) {
               throw err;
@@ -99,14 +99,14 @@ else {
         });
         display()
     }
-    if(args[2]=='readDir'){
+    if(args[2] === 'readDir'){
         console.log('\n The '+args[3]+' directory consists : ');
-        console.log(fs.readdirSync(pathName+ args[4] +args[3]));
+        console.log(fs.readdirSync(pathName + args[4] + args[3]));
         display()
     }
 }
-    if(args[2]=='renameDir'){
-    fs.rename(pathName + args[5] +args[3], pathName + args[5] +args[4], err => {
+    if(args[2] === 'renameDir'){
+    fs.rename(pathName + args[5] + args[3], pathName + args[5] + args[4], err => {
         if (err) {
         console.error(err);
         }

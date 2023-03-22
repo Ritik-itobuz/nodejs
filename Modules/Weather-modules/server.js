@@ -44,7 +44,7 @@ function getRequestData(req) {
 }
 
 const server = http.createServer((req, res) => {
-  res.setHeader("Access-Control-Allow-Origin","*")
+  res.setHeader("Access-Control-Allow-Origin", "*")
   res.end(getRequestData(req));
 });
 
