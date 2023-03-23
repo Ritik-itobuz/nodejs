@@ -8,7 +8,6 @@ function readData() {
     let dbPath = path.resolve("db.txt");
     const data = fs.readFileSync(dbPath, "utf8");
     const arr = JSON.parse(data);
-    // console.log(arr);
     return arr;
   } catch (err) {
     console.log(err);
