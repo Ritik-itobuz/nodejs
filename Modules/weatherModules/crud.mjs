@@ -29,7 +29,7 @@ const writeFileData = (data) => {
 export const getWeatherData = (location) => {
   const data = readFileData();
   let weatherData = data.find(
-    (item) => item.location.name.toLowerCase() == location.toLowerCase()
+    (item) => item.location.name.toLowerCase() === location.toLowerCase()
   );
   return weatherData;
 };
@@ -38,7 +38,7 @@ export const addLocation = (location, current) => {
   const data = readFileData();
   let isPresent = false;
   data.forEach((item) => {
-    if (item.location.name == location.name) {
+    if (item.location.name === location.name) {
       isPresent = true;
     }
   });
@@ -52,7 +52,7 @@ export const addLocation = (location, current) => {
 export const updateLocation = (city, obj) => {
   const data = readFileData();
   let index = data.findIndex(
-    (item) => item.location.name.toLowerCase() == city.toLowerCase()
+    (item) => item.location.name.toLowerCase() === city.toLowerCase()
   );
   if (index > -1) {
     data.splice(index, 1, obj);
@@ -66,7 +66,7 @@ export const deleteLocation = (city) => {
   const data = readFileData();
 
   let index = data.findIndex(
-    (item) => item.location.name.toLowerCase() == city.toLowerCase()
+    (item) => item.location.name.toLowerCase() === city.toLowerCase()
   );
   if (index > -1) {
     data.splice(index, 1);

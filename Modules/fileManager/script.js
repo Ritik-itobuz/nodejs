@@ -3,7 +3,7 @@ const process = require("process");
 const path = require("path");
 
 var args = process.argv;
-var directory = path.dirname(args[1])+'/'
+var directory = path.dirname(args[1]) + '/'
 
 
 function print(){
@@ -27,9 +27,9 @@ else {
     if (args[2] === '1'){
         console.log('node script.js readFile "Filename" ')}
     if (args[2] === '2'){
-        console.log('node script.js createFile "Foldername" "Filename" "text that the file will contain" ')}
+        console.log('node script.js createFile "Foldername" "Filename" "Enter the File Content" ')}
     if (args[2] === '3'){
-        console.log('node script.js updateFile "Foldername" "Filename" "text that will be updated in the file"')}
+        console.log('node script.js updateFile "Foldername" "Filename" "Enter the updated File Content"')}
     if (args[2] === '4'){
         console.log('node script.js deleteFile "Foldername" "Filename" ')}
     if (args[2] === '5'){
